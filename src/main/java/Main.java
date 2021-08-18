@@ -53,5 +53,11 @@ public class Main {
     private void spausdinti(List<Asmenys> sarasas){
         sarasas.forEach(System.out::println);
     }
+    private void tikrintiVienoduma(List<Asmenys> asmenuSarasas,Asmenys asmuo) throws Exception {
+       if(asmenuSarasas.stream().filter(v->v.getAsmensKodas().equals(asmuo.getAsmensKodas())).findAny().isPresent()){
+        throw new Exception("Asmesns kodas egzistuoja");
+       }
+    }
+
 
 }
